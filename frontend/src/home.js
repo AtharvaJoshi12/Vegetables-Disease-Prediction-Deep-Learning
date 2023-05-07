@@ -8,22 +8,32 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell, Button, CircularProgress } from "@material-ui/core";
+import {
+  Paper,
+  CardActionArea,
+  CardMedia,
+  Grid,
+  TableContainer,
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+  Button,
+  CircularProgress,
+} from "@material-ui/core";
 import cblogo from "./cblogo.PNG";
 import image from "./bg.png";
-import { DropzoneArea } from 'material-ui-dropzone';
-import { common } from '@material-ui/core/colors';
-import Clear from '@material-ui/icons/Clear';
-
-
-
+import { DropzoneArea } from "material-ui-dropzone";
+import { common } from "@material-ui/core/colors";
+import Clear from "@material-ui/icons/Clear";
 
 const ColorButton = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(common.white),
     backgroundColor: common.white,
-    '&:hover': {
-      backgroundColor: '#ffffff7a',
+    "&:hover": {
+      backgroundColor: "#ffffff7a",
     },
   },
 }))(Button);
@@ -50,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    margin: 'auto',
+    margin: "auto",
     maxWidth: 500,
   },
   gridContainer: {
@@ -58,23 +68,23 @@ const useStyles = makeStyles((theme) => ({
     padding: "4em 1em 0 1em",
   },
   mainContainer: {
-    backgroundImage: `url(${image})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
+    backgroundColor: "#ebe9e9cc",
     height: "93vh",
-    marginTop: "8px",
+    width: "90vw",
+    marginTop: "25px",
+    border: "3px solid #cecaca",
+    borderRadius: "10px",
   },
   imageCard: {
     margin: "auto",
     maxWidth: 400,
     height: 500,
-    backgroundColor: 'transparent',
-    boxShadow: '0px 9px 70px 0px rgb(0 0 0 / 30%) !important',
-    borderRadius: '15px',
+    backgroundColor: "#07da67",
+    boxShadow: "0px 9px 70px 0px rgb(0 0 0 / 30%) !important",
+    borderRadius: "15px",
   },
   imageCardEmpty: {
-    height: 'auto',
+    height: "auto",
   },
   noImage: {
     margin: "auto",
@@ -82,66 +92,75 @@ const useStyles = makeStyles((theme) => ({
     height: "400 !important",
   },
   input: {
-    display: 'none',
+    display: "none",
   },
   uploadIcon: {
-    background: 'white',
+    background: "white",
   },
   tableContainer: {
-    backgroundColor: 'transparent !important',
-    boxShadow: 'none !important',
+    backgroundColor: "transparent !important",
+    boxShadow: "none !important",
   },
   table: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   tableHead: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   tableRow: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   tableCell: {
-    fontSize: '22px',
-    backgroundColor: 'transparent !important',
-    borderColor: 'transparent !important',
-    color: '#000000a6 !important',
-    fontWeight: 'bolder',
-    padding: '1px 24px 1px 16px',
+    fontSize: "22px",
+    backgroundColor: "transparent !important",
+    borderColor: "transparent !important",
+    color: "#000000a6 !important",
+    fontWeight: "bolder",
+    padding: "1px 24px 1px 16px",
   },
   tableCell1: {
-    fontSize: '14px',
-    backgroundColor: 'transparent !important',
-    borderColor: 'transparent !important',
-    color: '#000000a6 !important',
-    fontWeight: 'bolder',
-    padding: '1px 24px 1px 16px',
+    fontSize: "14px",
+    backgroundColor: "transparent !important",
+    borderColor: "transparent !important",
+    color: "#000000a6 !important",
+    fontWeight: "bolder",
+    padding: "1px 24px 1px 16px",
   },
   tableBody: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   text: {
-    color: 'white !important',
-    textAlign: 'center',
+    color: "white !important",
+    textAlign: "center",
   },
   buttonGrid: {
     maxWidth: "416px",
     width: "100%",
   },
   detail: {
-    backgroundColor: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
   },
   appbar: {
-    background: '#be6a77',
-    boxShadow: 'none',
-    color: 'white'
+    background: "white",
+    boxShadow: "none",
+    color: "white",
   },
   loader: {
-    color: '#be6a77 !important',
-  }
+    color: "#be6a77 !important",
+  },
+  myButton: {
+    padding: "10px",
+    borderRadius: "5px",
+    border: "none",
+    cursor: "pointer",
+    margin: "10px",
+    marginTop: "27px",
+    fontSize: "17px",
+  },
 }));
 export const ImageUpload = () => {
   const classes = useStyles();
@@ -166,7 +185,7 @@ export const ImageUpload = () => {
       }
       setIsloading(false);
     }
-  }
+  };
 
   const clearData = () => {
     setData(null);
@@ -208,18 +227,58 @@ export const ImageUpload = () => {
     confidence = (parseFloat(data.confidence) * 100).toFixed(2);
   }
 
+  const heading = {
+    color: "#676767",
+    marginTop: "30px",
+  };
+
+  const eb = {
+    marginTop: "100px",
+    height: "700px",
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "#ee7747",
+  };
+  const lb = {
+    marginTop: "100px",
+    height: "700px",
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    flexDirection: "row-reverse",
+  };
+
   return (
     <React.Fragment>
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            CodeBasics: Potato Disease Classification
+          <Typography className={classes.title} variant="h4" noWrap>
+            <img height={"60px"} src="/logo.png" alt="" />{" "}
+            <b style={{ color: "gray" }}>Vegi</b>
           </Typography>
+          <div style={{ marginLeft: "300px" }}>
+            <button className={classes.myButton}>Potato</button>
+            <button className={classes.myButton}>Tomato</button>
+            <button
+              className={classes.myButton}
+              style={{ background: "#ee7747" }}
+            >
+              How it works
+            </button>
+          </div>
           <div className={classes.grow} />
-          <Avatar src={cblogo}></Avatar>
+          {/* <Avatar src={cblogo}>vegetables disease detection</Avatar> */}
+          <h2 style={{ color: "gray", fontWeight: "normal" }}>
+            Vegetables disease detection
+          </h2>
         </Toolbar>
       </AppBar>
-      <Container maxWidth={false} className={classes.mainContainer} disableGutters={true}>
+      <Container
+        maxWidth={false}
+        className={classes.mainContainer}
+        disableGutters={true}
+      >
         <Grid
           className={classes.gridContainer}
           container
@@ -229,60 +288,202 @@ export const ImageUpload = () => {
           spacing={2}
         >
           <Grid item xs={12}>
-            <Card className={`${classes.imageCard} ${!image ? classes.imageCardEmpty : ''}`}>
-              {image && <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={preview}
-                  component="image"
-                  title="Contemplative Reptile"
-                />
-              </CardActionArea>
-              }
-              {!image && <CardContent className={classes.content}>
-                <DropzoneArea
-                  acceptedFiles={['image/*']}
-                  dropzoneText={"Drag and drop an image of a potato plant leaf to process"}
-                  onChange={onSelectFile}
-                />
-              </CardContent>}
-              {data && <CardContent className={classes.detail}>
-                <TableContainer component={Paper} className={classes.tableContainer}>
-                  <Table className={classes.table} size="small" aria-label="simple table">
-                    <TableHead className={classes.tableHead}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell className={classes.tableCell1}>Label:</TableCell>
-                        <TableCell align="right" className={classes.tableCell1}>Confidence:</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody className={classes.tableBody}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell component="th" scope="row" className={classes.tableCell}>
-                          {data.class}
-                        </TableCell>
-                        <TableCell align="right" className={classes.tableCell}>{confidence}%</TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </CardContent>}
-              {isLoading && <CardContent className={classes.detail}>
-                <CircularProgress color="secondary" className={classes.loader} />
-                <Typography className={classes.title} variant="h6" noWrap>
-                  Processing
-                </Typography>
-              </CardContent>}
+            <Card
+              className={`${classes.imageCard} ${
+                !image ? classes.imageCardEmpty : ""
+              }`}
+            >
+              {image && (
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={preview}
+                    component="image"
+                    title="Contemplative Reptile"
+                  />
+                </CardActionArea>
+              )}
+              {!image && (
+                <CardContent className={classes.content}>
+                  <DropzoneArea
+                    acceptedFiles={["image/*"]}
+                    dropzoneText={
+                      "Drag and drop an image of a potato plant leaf to process"
+                    }
+                    onChange={onSelectFile}
+                  />
+                </CardContent>
+              )}
+              {data && (
+                <CardContent className={classes.detail}>
+                  <TableContainer
+                    component={Paper}
+                    className={classes.tableContainer}
+                  >
+                    <Table
+                      className={classes.table}
+                      size="small"
+                      aria-label="simple table"
+                    >
+                      <TableHead className={classes.tableHead}>
+                        <TableRow className={classes.tableRow}>
+                          <TableCell className={classes.tableCell1}>
+                            Label:
+                          </TableCell>
+                          <TableCell
+                            align="right"
+                            className={classes.tableCell1}
+                          >
+                            Confidence:
+                          </TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody className={classes.tableBody}>
+                        <TableRow className={classes.tableRow}>
+                          <TableCell
+                            component="th"
+                            scope="row"
+                            className={classes.tableCell}
+                          >
+                            {data.class}
+                          </TableCell>
+                          <TableCell
+                            align="right"
+                            className={classes.tableCell}
+                          >
+                            {confidence}%
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </CardContent>
+              )}
+              {isLoading && (
+                <CardContent className={classes.detail}>
+                  <CircularProgress
+                    color="secondary"
+                    className={classes.loader}
+                  />
+                  <Typography className={classes.title} variant="h6" noWrap>
+                    Processing
+                  </Typography>
+                </CardContent>
+              )}
             </Card>
           </Grid>
-          {data &&
-            <Grid item className={classes.buttonGrid} >
-
-              <ColorButton variant="contained" className={classes.clearButton} color="primary" component="span" size="large" onClick={clearData} startIcon={<Clear fontSize="large" />}>
+          {data && (
+            <Grid item className={classes.buttonGrid}>
+              <ColorButton
+                variant="contained"
+                className={classes.clearButton}
+                color="primary"
+                component="span"
+                size="large"
+                onClick={clearData}
+                startIcon={<Clear fontSize="large" />}
+              >
                 Clear
               </ColorButton>
-            </Grid>}
-        </Grid >
-      </Container >
-    </React.Fragment >
+            </Grid>
+          )}
+        </Grid>
+      </Container>
+      {/* <div className="sol">
+        <center>
+          <h2 style={heading}>Diagnosis</h2>
+          <div style={eb}>
+            <h2 style={{ color: "white", fontSize: "30px" }}>
+              For Early blight :
+            </h2>
+            <p
+              style={{
+                width: "500px",
+                textAlign: "left",
+                background: "white",
+                padding: "20px",
+                borderRadius: "15px",
+                boxShadow: "inherit",
+                border: "none",
+              }}
+            >
+              Early blight is a common fungal disease that affects potato
+              plants, causing dark lesions on the leaves and stems, and reducing
+              the overall yield of the crop. Here are some steps you can take to
+              manage early blight in your potato crop:
+              <br />
+              <br />
+              Plant resistant varieties: Choose potato varieties that are known
+              to be resistant to early blight.
+              <br />
+              <br />
+              Crop rotation: Rotate your potato crop with other crops that are
+              not in the same family (e.g. legumes, grasses) to reduce the
+              buildup of fungal spores in the soil.
+              <br />
+              <br />
+              Practice good hygiene: Remove and destroy any infected plant
+              debris, and sanitize all tools and equipment to prevent the spread
+              of the disease. <br /> <br /> Maintain proper spacing: Ensure that
+              plants are spaced out adequately to increase air circulation and
+              reduce humidity, which can promote the growth of the fungus.{" "}
+              <br /> <br /> Use fungicides: If early blight is a recurring
+              problem, you may need to use fungicides to control the disease.
+              Consult with a local agricultural extension service or a licensed
+              professional for recommendations on the best fungicide to use and
+              how to apply it.
+              <br />
+              <br />
+              By following these steps, you can help to prevent or manage early
+              blight in your potato crop.
+            </p>
+          </div>
+          <div style={lb}>
+            <h2 style={heading}>: For Late blight</h2>
+            <p
+              style={{
+                width: "500px",
+                textAlign: "left",
+                background: "white",
+                padding: "20px",
+                borderRadius: "15px",
+                boxShadow: "inherit",
+                border: "none",
+              }}
+            >
+              Early blight is a common fungal disease that affects potato
+              plants, causing dark lesions on the leaves and stems, and reducing
+              the overall yield of the crop. Here are some steps you can take to
+              manage early blight in your potato crop:
+              <br />
+              <br />
+              Plant resistant varieties: Choose potato varieties that are known
+              to be resistant to early blight.
+              <br />
+              <br />
+              Crop rotation: Rotate your potato crop with other crops that are
+              not in the same family (e.g. legumes, grasses) to reduce the
+              buildup of fungal spores in the soil.
+              <br />
+              <br />
+              Practice good hygiene: Remove and destroy any infected plant
+              debris, and sanitize all tools and equipment to prevent the spread
+              of the disease. <br /> <br /> Maintain proper spacing: Ensure that
+              plants are spaced out adequately to increase air circulation and
+              reduce humidity, which can promote the growth of the fungus.{" "}
+              <br /> <br /> Use fungicides: If early blight is a recurring
+              problem, you may need to use fungicides to control the disease.
+              Consult with a local agricultural extension service or a licensed
+              professional for recommendations on the best fungicide to use and
+              how to apply it.
+              <br />
+              <br />
+              By following these steps, you can help to prevent or manage early
+              blight in your potato crop.
+            </p>
+          </div>
+        </center>
+      </div> */}
+    </React.Fragment>
   );
 };
