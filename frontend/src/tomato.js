@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imageCard: {
     margin: "auto",
-    maxWidth: 400,
+    maxWidth: 450,
     height: 500,
     backgroundColor: "#07da67",
     boxShadow: "0px 9px 70px 0px rgb(0 0 0 / 30%) !important",
@@ -163,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "17px",
   },
 }));
-export const ImageUpload = () => {
+export const ImageUpload2 = () => {
   const classes = useStyles();
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
@@ -178,7 +178,7 @@ export const ImageUpload = () => {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: process.env.REACT_APP_API_URL,
+        url: process.env.REACT_APP_API_URL2,
         data: formData,
       });
       if (res.status === 200) {
@@ -259,15 +259,15 @@ export const ImageUpload = () => {
             <b style={{ color: "gray" }}>Vegi</b>
           </Typography>
           <div style={{ marginLeft: "350px" }}>
+            <Link to="/">
+              <button className={classes.myButton}>Potato</button>
+            </Link>
             <button
               className={classes.myButton}
               style={{ background: "#ee7747" }}
             >
-              Potato
+              Tomato
             </button>
-            <Link to="/tomato">
-              <button className={classes.myButton}>Tomato</button>
-            </Link>
             <button className={classes.myButton}>Pepper</button>
           </div>
           <div className={classes.grow} />
@@ -311,7 +311,7 @@ export const ImageUpload = () => {
                   <DropzoneArea
                     acceptedFiles={["image/*"]}
                     dropzoneText={
-                      "Drag and drop an image of a potato plant leaf to process"
+                      "Drag and drop an image of a tomato plant leaf to process"
                     }
                     onChange={onSelectFile}
                   />
