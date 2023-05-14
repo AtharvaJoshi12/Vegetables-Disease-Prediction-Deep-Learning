@@ -268,7 +268,9 @@ export const ImageUpload2 = () => {
             >
               Tomato
             </button>
-            <button className={classes.myButton}>Pepper</button>
+            <Link to="/pepper">
+              <button className={classes.myButton}>Pepper</button>
+            </Link>
           </div>
           <div className={classes.grow} />
           {/* <Avatar src={cblogo}>vegetables disease detection</Avatar> */}

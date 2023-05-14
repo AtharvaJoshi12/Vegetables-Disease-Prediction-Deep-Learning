@@ -23,6 +23,7 @@ app.add_middleware(
 
 MODEL = tf.keras.models.load_model("../saved_models/1")
 MODEL2 = tf.keras.models.load_model("../saved_models/2")
+MODEL3 = tf.keras.models.load_model("../saved_models/3")
 
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
 CLASS_NAMES2 = ['Bacterial_spot',
@@ -35,6 +36,7 @@ CLASS_NAMES2 = ['Bacterial_spot',
  'YellowLeaf__Curl_Virus',
  'mosaic_virus',
  'healthy']
+CLASS_NAMES3 = ["Bacterial_spot", "Healthy"]
 
 @app.get("/ping")
 async def ping():
@@ -75,6 +77,22 @@ async def predict(
    predictions = MODEL2.predict(img_batch)
 
    predicted_class = CLASS_NAMES2[np.argmax(predictions[0])]
+   confidence = np.max(predictions[0])
+   return {
+       'class': predicted_class,
+       'confidence': float(confidence)
+   }
+
+@app.post("/predict3")
+async def predict(
+    file: UploadFile = File(...)
+):
+   image = read_file_as_image(await file.read())
+   img_batch = np.expand_dims(image, 0)
+   
+   predictions = MODEL3.predict(img_batch)
+
+   predicted_class = CLASS_NAMES3[np.argmax(predictions[0])]
    confidence = np.max(predictions[0])
    return {
        'class': predicted_class,

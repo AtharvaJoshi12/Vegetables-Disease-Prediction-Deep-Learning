@@ -163,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "17px",
   },
 }));
-export const ImageUpload = () => {
+export const ImageUpload3 = () => {
   const classes = useStyles();
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
@@ -178,7 +178,7 @@ export const ImageUpload = () => {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: process.env.REACT_APP_API_URL,
+        url: process.env.REACT_APP_API_URL3,
         data: formData,
       });
       if (res.status === 200) {
@@ -259,17 +259,19 @@ export const ImageUpload = () => {
             <b style={{ color: "gray" }}>Vegi</b>
           </Typography>
           <div style={{ marginLeft: "350px" }}>
-            <button
-              className={classes.myButton}
-              style={{ background: "#ee7747" }}
-            >
-              Potato
-            </button>
+            <Link to="/">
+              <button className={classes.myButton}>Potato</button>
+            </Link>
             <Link to="/tomato">
               <button className={classes.myButton}>Tomato</button>
             </Link>
             <Link to="/pepper">
-              <button className={classes.myButton}>Pepper</button>
+              <button
+                className={classes.myButton}
+                style={{ background: "#ee7747" }}
+              >
+                Pepper
+              </button>
             </Link>
           </div>
           <div className={classes.grow} />
@@ -313,7 +315,7 @@ export const ImageUpload = () => {
                   <DropzoneArea
                     acceptedFiles={["image/*"]}
                     dropzoneText={
-                      "Drag and drop an image of a potato plant leaf to process"
+                      "Drag and drop an image of a pepper plant leaf to process"
                     }
                     onChange={onSelectFile}
                   />
