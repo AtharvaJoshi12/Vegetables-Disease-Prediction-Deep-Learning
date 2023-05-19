@@ -1,5 +1,19 @@
 # vegetables-disease-detection-Deep-Learning
 
+## Problem Statement:
+
+The goal of this project is to create a website that allows users to upload photographs of vegetable leaves and properly detect if the leaves are healthy or diseased, as well as identify the disease if the leaves are unhealthy.
+
+## Objective of the work:
+
+The objective is to provide a user-friendly platform for farmers, gardeners, and enthusiasts to quickly identify and diagnose potential diseases affecting their crops. 
+
+The website will analyze the uploaded images and provide real-time feedback, allowing users to take prompt action to mitigate crop damage and maximize yields. 
+
+The project seeks to address the need for an efficient and accessible tool for leaf disease detection, aiding in early intervention and enhancing agricultural productivity.
+
+
+
 ## Setup for Python:
 
 1. Install Python ([Setup instructions](https://wiki.python.org/moin/BeginnersGuide))
