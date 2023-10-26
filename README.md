@@ -1,4 +1,4 @@
-# vegetables-disease-detection-Deep-Learning
+# Vegetables-Disease-Prediction-Deep-Learning
 
 ## Problem Statement:
 
