@@ -1,4 +1,4 @@
-# Vegetables-Disease-Prediction-Deep-Learning
+# Vegetables-Disease-Prediction-Deep-Learning (Vegi)
 
 ## Problem Statement:
 
