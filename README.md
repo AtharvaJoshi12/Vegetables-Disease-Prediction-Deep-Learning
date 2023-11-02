@@ -12,6 +12,12 @@ The website will analyze the uploaded images and provide real-time feedback, all
 
 The project seeks to address the need for an efficient and accessible tool for leaf disease detection, aiding in early intervention and enhancing agricultural productivity.
 
+## Sample 
+![Screenshot 2023-05-18 182331](https://github.com/AtharvaJoshi12/Vegetables-Disease-Prediction-Deep-Learning/assets/92630905/017087d1-253c-4ad4-b0d6-145293b98613)
+
+<hr>
+
+![Screenshot 2023-05-18 182507](https://github.com/AtharvaJoshi12/Vegetables-Disease-Prediction-Deep-Learning/assets/92630905/07744932-f5c1-44d4-8676-3842627e3efe)
 
 
 ## Setup for Python:
